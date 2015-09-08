@@ -1,0 +1,92 @@
+body {
+	background:fixed;
+}
+#header {
+	text-align:center;
+	font-weight:bold;
+	font-size:2em;
+}
+#footer {
+	text-align:center;
+}
+
+#content {
+	height:200px;
+	clear:both;
+}
+#mian_view {
+	background-color:grey;
+	height:100%;
+	float: left;
+	width:60%;
+}
+#left_control{
+	background-color:red;
+	height:100%;
+	float:left;
+	width:20%;
+}
+#right_control{
+	background-color:green;
+	height:100%;
+	float:right;
+	width:20%;
+}
+
+#up {
+	width:50px;
+	position:relative;
+	top:20px;
+	left:90px;
+}
+#down {
+	position:relative;
+	top:160px;
+	left:32px;
+}
+#left {
+	position:relative;
+	top:85px;
+	right:100px;
+}
+#right {
+	width:50px;
+	position:relative;
+	top:85px;
+    right:20px;
+}
+
+#start {
+	width:50px;
+	position:relative;
+	left:30px;
+	top:30px;
+}
+#stop {
+	width:50px;
+	position:relative;
+	left:80px;
+	top:30px;
+}
+#slower {
+	width:50px;
+	position:relative;
+	top:120px;
+	left:30px;
+}
+#normal {
+    position:relative;
+    width:50px;
+    top:88px;
+    right:90px;
+
+}
+#faster {
+	width:50px;
+	position:relative;
+    left:24px;
+	top:145px;
+}
+
+/*div#menu {#ffff99;height:200px;width:150px;float:left;}*/
+/*div#content {#EEEEEE;height:200px;width:350px;float:left;}*/

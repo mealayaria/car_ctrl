@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+# coding=utf-8
+import A13_GPIO as GPIO
+import sys
+
+GPIO.init()
+
+L = [GPIO.HIGH,GPIO.LOW,GPIO.HIGH,GPIO.LOW]
+R = [GPIO.LOW,GPIO.HIGH,GPIO.LOW,GPIO.HIGH]
+U = [GPIO.LOW,GPIO.HIGH,GPIO.HIGH,GPIO.LOW]
+D = [GPIO.HIGH,GPIO.LOW,GPIO.LOW,GPIO.HIGH]
+pin = [GPIO.PIN1,GPIO.PIN3,GPIO.PIN5,GPIO.PIN7]
+
+#设置引脚1、3、5、7为GPIO
+for i in range (4):
+    GPIO.setcfg(pin[i],GPIO.OUT)
+
+def ctrl(x):
+    if x == '2':
+        print 'back'
+        for j in range (4):
+            GPIO.output(pin[j],D[j])
+    elif x == '4':
+	    print 'left'
+        for j in range (4):
+            GPIO.output(pin[j],L[j])
+    elif x == '6':
+	    print 'right'
+        for j in range (4):
+            GPIO.output(pin[j],R[j])
+    elif x == '8':
+	    print 'up'
+        for j in range (4):
+            GPIO.output(pin[j],U[j])
+    elif x == 'q':
+        GPIO.cleanup()
+    else:
+        print 'Wrong control word!'
+
+if sys.argv < 2:
+    print 'need more value!'
+else:
+    ctrl(sys.argv[1])
+
+#while 1:
+#    c = raw_input('Enter control word:')
+#    if c == 'q':
+#        GPIO.cleanup()
+#        break
+#    ctrl(c)    
+    
+    
+    
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<script>
+function send_cmd(val)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("POST","un_connect.php",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("val=" + val);
+}
+/*
+function start(val)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("POST","start.php",true);
+	// xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send();
+
+}
+*/
+
+</script>
+</head>
+
+<body>
+
+
+
+<div id="header">car control</div>
+
+<div id="content">
+	<div id="left_control">
+		<button id="start" onclick="send_cmd('#')">start</button>
+		<button id="stop" onclick="send_cmd('q')">stop</button>
+        <button id="faster" onclick="send_cmd('1')">faster</button>
+        <button id="normal" onclick="send_cmd('5')">normal</button>
+		<button id="slower" onclick="send_cmd('0')">slower</button>
+	</div>
+
+	<div id="mian_view"></div>
+
+	<div id="right_control">
+
+		<button id="up" onclick="send_cmd('8')">up</button>
+		<button id="down" onclick="send_cmd('2')">down</button>
+		<button id="left" onclick="send_cmd('4')">left</button>
+		<button id="right" onclick="send_cmd('6')">right</button>
+	</div>
+
+</div>
+
+
+<div id="footer">Designed By Weiyy</div>
+
+</div>
+
+</body>
+</html>
